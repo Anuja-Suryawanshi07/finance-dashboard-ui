@@ -6,7 +6,7 @@ import ExpenseChart from "../components/Dashboard/ExpenseChart";
 export default function Dashboard() {
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">
+      <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
         Financial Overview
       </h1>
 

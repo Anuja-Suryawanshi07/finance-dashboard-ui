@@ -37,29 +37,33 @@ export default function Insights() {
       : "Your finances are in good shape!";
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-6">Insights</h1>
+<div>
+  <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">
+    Insights
+  </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Highest Category */}
-        <div className="bg-white p-5 rounded-2xl shadow">
-          <h2 className="font-semibold mb-2">Highest Spending Category</h2>
-          <p className="text-lg font-bold">{highestCategory || "No data"}</p>
-        </div>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        {/* Monthly Comparison */}
-        <div className="bg-white p-5 rounded-2xl shadow">
-          <h2 className="font-semibold mb-2">Income vs Expense</h2>
-          <p>Income: ₹ {totalIncome}</p>
-          <p>Expense: ₹ {totalExpense}</p>
-        </div>
-
-        {/* Insight */}
-        <div className="bg-white p-5 rounded-2xl shadow">
-          <h2 className="font-semibold mb-2">Observation</h2>
-          <p>{insight}</p>
-        </div>
-      </div>
+    {/* Highest Category */}
+    <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-5 rounded-2xl shadow">
+      <h2 className="font-semibold mb-2">Highest Spending Category</h2>
+      <p className="text-lg font-bold">{highestCategory || "No data"}</p>
     </div>
+
+    {/* Monthly Comparison */}
+    <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-5 rounded-2xl shadow">
+      <h2 className="font-semibold mb-2">Income vs Expense</h2>
+      <p>Income: ₹ {totalIncome}</p>
+      <p>Expense: ₹ {totalExpense}</p>
+    </div>
+
+    {/* Insight */}
+    <div className="bg-white dark:bg-gray-800 text-black dark:text-white p-5 rounded-2xl shadow">
+      <h2 className="font-semibold mb-2">Observation</h2>
+      <p>{insight}</p>
+    </div>
+
+  </div>
+</div>
   );
 }

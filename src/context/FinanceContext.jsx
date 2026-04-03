@@ -17,9 +17,23 @@ export const FinanceProvider = ({ children }) => {
         localStorage.setItem("transactions", JSON.stringify(transactions));
     },[transactions]);
 
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
+
     return (
         <FinanceContext.Provider
-            value={{ transactions, setTransactions, role, setRole }}
+            value={{ transactions, setTransactions, role, setRole, theme, setTheme }}
         >
             {children}
         </FinanceContext.Provider>    

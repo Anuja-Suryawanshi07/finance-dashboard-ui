@@ -39,7 +39,7 @@ export default function Transactions() {
                 /> 
 
                 <select
-                    className="border p-2 rounded"
+                    className="border p-2 rounded text-gray-500"
                     value={typeFilter}
                     onChange={(e) => setTypeFilter(e.target.value)}
                 >
@@ -52,7 +52,7 @@ export default function Transactions() {
             {/* Table */}
 
             <div className="bg-white rounded-xl shadow">
-                <table className="w-full text-left">
+                <table className="w-full bg-white dark:bg-gray-800 text-black dark:text-white">
                     <thead className="border-b">
                         <tr>
                             <th className="p-3">Date</th>
@@ -68,7 +68,7 @@ export default function Transactions() {
                         {filteredTransactions.length > 0 ? (
                             filteredTransactions.map((t) => (
                                 <tr key={t.id} className="border-b">
-                                    <td className="p-3">{t.data}</td>
+                                    <td className="p-3">{t.date}</td>
                                     <td className="p-3">{t.category}</td>
                                     <td className="p-3 capitalize">{t.type}</td>
                                     <td className="p-3">₹ {t.amount}</td>
