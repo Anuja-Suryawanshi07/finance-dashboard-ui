@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { FinanceContext } from "../context/FinanceContext";
 
 export default function Transactions() {
-    const { transactions = [], role } = useContext(FinanceContext);
+    const { transactions = [], setTransactions, role } = useContext(FinanceContext);
 
     const [search, setSearch] = useState("");
     const [typeFilter, setTypeFilter] = useState("all");
@@ -18,6 +18,11 @@ export default function Transactions() {
 
         return matchesSearch && matchsType;
     });
+
+    const handleDelete = (id) => {
+        const updatedTransactions = transactions.filter(t => t.id !== id);
+        setTransactions(updatedTransactions);
+    };
 
     return (
         <div>
@@ -70,10 +75,11 @@ export default function Transactions() {
 
                                     {role === "admin" && (
                                         <td className="p-3">
-                                            <button className="text-blue-500 mr-2">
+                                            <button className="text-gray-400 mr-2 cursor-not-allowed">
                                                 Edit
                                             </button>
-                                            <button className="text-red-500">
+                                            <button onClick={() => handleDelete(t.id)}
+                                            className="text-red-500">
                                                 Delete
                                             </button>
                                         </td>
