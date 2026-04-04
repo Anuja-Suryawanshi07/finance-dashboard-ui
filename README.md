@@ -3,6 +3,11 @@
 A modern and responsive Finance Dashboard built using **React.js** and **Tailwind CSS**.
 This project allows users to track their financial activity, analyze spending patterns, and manage transactions with a clean UI.
 
+## 🌐 Live Demo
+
+🚀 **Deployed on Vercel:**  
+👉 https://finance-dashboard-ui-green-mu.vercel.app/
+
 ---
 
 ## 🚀 Features
