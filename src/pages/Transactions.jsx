@@ -34,14 +34,14 @@ export default function Transactions() {
       <h1 className="text-2xl font-bold mb-6">Transactions</h1>
       <button
         onClick={() => exportToCSV(transactions)}
-        className="px-4 py-2 mb-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        className="px-4 py-2 mb-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
       >
         Export CSV
       </button>
 
       <button
       onClick={() => exportToJSON(transactions)}
-      className="px-4 py-2 ml-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+      className="px-4 py-2 ml-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
     >
       Export JSON
     </button>
@@ -51,7 +51,11 @@ export default function Transactions() {
         <input
           type="text"
           placeholder="Search by category..."
-          className="border p-2 rounded w-full"
+          className="border p-2 rounded w-full 
+             bg-white dark:bg-gray-800 
+             text-black dark:text-white 
+             placeholder-gray-500 dark:placeholder-gray-400
+             focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />

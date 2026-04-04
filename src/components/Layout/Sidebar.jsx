@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="w-64 h-screen bg-blue-900 dark:bg-gray-950 text-white p-5 flex flex-col">
+    <div className="w-64 min-h-full bg-blue-900 dark:bg-gray-950 text-white p-5 flex flex-col">
 
       {/* Title */}
       <h2 className="text-xl font-bold mb-8">Finance App</h2>
